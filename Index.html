@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <title>IBUDGETER</title>
+    
+    <!-- Barcode scanner library -->
+    <script src="https://unpkg.com/html5-qrcode@2.3.8/html5-qrcode.min.js">
+    </script>
+    
+    <!-- Styles -->
+    <link rel="stylesheet" href="web.css" />
+</head>
+<body>
+    <div class="container">
+        
+        <!-- Header -->
+        <h1>📱 IBUDGETER</h1>
+        <p class="subtitle">Smart Budget Tracker with Barcode Scanner</p>
+
+        <!-- Budget Section -->
+        <div class="budget-section">
+            <div class="budget-input-group">
+                <label for="budgetInput">💰 Set Your Budget</label>
+                <div class="budget-input-row">
+                    <span class="currency-symbol">₱</span>
+                    <input type="number" id="budgetInput" placeholder="1000" min="0" step="50" />
+                    <button id="setBudgetBtn" class="budget-btn">Set Budget</button>
+                </div>
+            </div>
+            
+            <!-- Budget Display -->
+            <div class="budget-display" id="budgetDisplay" style="display:none;">
+                <div class="budget-item">
+                    <span class="budget-label">💰 Total Budget</span>
+                    <span class="budget-amount" id="totalBudget">₱0.00</span>
+                </div>
+                <div class="budget-item">
+                    <span class="budget-label">🛒 Spent</span>
+                    <span class="budget-amount spent" id="spentAmount">₱0.00</span>
+                </div>
+                <div class="budget-item">
+                    <span class="budget-label">💵 Remaining</span>
+                    <span class="budget-amount remaining" id="remainingAmount">₱0.00</span>
+                </div>
+            </div>
+            
+            <!-- Progress Bar -->
+            <div class="budget-progress" id="budgetProgress" style="display:none;">
+                <div class="progress-bar">
+                    <div class="progress-fill" id="progressFill" style="width:0%;"></div>
+                </div>
+                <span class="progress-text" id="progressText">0% used</span>
+            </div>
+        </div>
+
+        <!-- Scanner -->
+        <div id="scanner-container">
+            <div id="scanner"></div>
+            <div id="scan-overlay"></div>
+        </div>
+        <p class="scan-instructions">📷 Position barcode inside the frame</p>
+
+        <!-- Manual Input -->
+        <div class="manual-section">
+            <input type="text" id="manualBarcode" placeholder="Enter barcode number" />
+            <button id="lookupBtn">Look up</button>
+        </div>
+
+        <!-- Loading -->
+        <div id="loading">
+            <div class="spinner"></div>
+            <p>Fetching product data …</p>
+        </div>
+
+        <!-- Results -->
+        <div id="results"></div>
+
+        <!-- Shopping List -->
+        <div class="shopping-list-section" id="shoppingListSection" style="display:none;">
+            <div class="list-header">
+                <h2>🛍️ Shopping List</h2>
+                <button id="clearListBtn" class="clear-btn">Clear All</button>
+            </div>
+            <div class="list-summary">
+                <span>Items: <strong id="itemCount">0</strong></span>
+                <span>Total: <strong id="listTotal">₱0.00</strong></span>
+            </div>
+            <div id="shoppingList" class="shopping-list"></div>
+        </div>
+    </div>
+
+    <script src="web.js"></script>
+</body>
+</html>
