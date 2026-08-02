@@ -24,7 +24,7 @@ IBUDGETER is a web-based grocery budget tracker that lets you scan product barco
 
 ## Live Demo
 
-👉 https://YOUR-USERNAME.github.io/IBUDGETER/
+👉 https://github.com/ibudgeterresearch-bit/iBUDGETER.
 
 ---
 
@@ -50,7 +50,7 @@ IBUDGETER is a web-based grocery budget tracker that lets you scan product barco
 
 ## Author
 
-Created by Claude Pogi
+Created the Researcher
 
 ---
 
